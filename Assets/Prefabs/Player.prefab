@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwSpawnPoint: {fileID: 709381473279804041}
+  foodDestroyTime: 3
   throwForce: 1250
   randAngularVelModifier: 200
   throwDelayMax: 0.1
