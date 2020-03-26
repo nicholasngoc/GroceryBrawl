@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5188266015274625569}
   - component: {fileID: 324585342097878684}
   - component: {fileID: 4976529911693723559}
+  - component: {fileID: 6934424501402971857}
   m_Layer: 0
   m_Name: garlic
   m_TagString: Untagged
@@ -111,3 +112,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6934424501402971857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5188266015272629473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5338c6af073c3344c9ab6511fbb712ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
