@@ -9,6 +9,9 @@ public class Throw : MonoBehaviour
 {
     private GameObject[] _foodPrefabs;
     public GameObject throwSpawnPoint;
+    public float foodDestroyTime;
+
+    [Header("Throw Modifiers")]
     public float throwForce;
     public float randAngularVelModifier;
 
@@ -37,27 +40,7 @@ public class Throw : MonoBehaviour
     {
         if(_canThrow && Input.GetMouseButton(0))
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            //Default force vector that just used the .forward
-            Vector3 forceVector = throwSpawnPoint.transform.forward * throwForce;
-
-            //Modifies the force vector if we hit something. I don't use raycasts often so I think this doesnt have a range?...
-            if (Physics.Raycast(ray, out hit))
-                forceVector = Vector3.Normalize(hit.point - throwSpawnPoint.transform.position) * throwForce;
-
-            Rigidbody foodRb = Instantiate(_foodPrefabs[Random.Range(0, _foodPrefabs.Length)],
-                throwSpawnPoint.transform.position, throwSpawnPoint.transform.rotation).GetComponent<Rigidbody>();
-
-            //This adds a random angular velocity to give the food a lil spin
-            foodRb.angularVelocity = new Vector3(Random.Range(-randAngularVelModifier, randAngularVelModifier),
-                Random.Range(-randAngularVelModifier, randAngularVelModifier), Random.Range(-randAngularVelModifier, randAngularVelModifier));
-
-            foodRb.AddForce(forceVector);
-
-            _throwDelayCount = throwDelayMax;
-            _canThrow = false;
+            SpawnFood();
         }
         else if(!_canThrow && _throwDelayCount > 0)
         {
@@ -67,5 +50,32 @@ public class Throw : MonoBehaviour
         {
             _canThrow = true;
         }
+    }
+
+    private void SpawnFood()
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        //Default force vector that just used the .forward
+        Vector3 forceVector = throwSpawnPoint.transform.forward * throwForce;
+
+        //Modifies the force vector if we hit something. I don't use raycasts often so I think this doesnt have a range?...
+        if (Physics.Raycast(ray, out hit))
+            forceVector = Vector3.Normalize(hit.point - throwSpawnPoint.transform.position) * throwForce;
+
+        Rigidbody foodRb = Instantiate(_foodPrefabs[Random.Range(0, _foodPrefabs.Length)],
+            throwSpawnPoint.transform.position, throwSpawnPoint.transform.rotation).GetComponent<Rigidbody>();
+
+        //This adds a random angular velocity to give the food a lil spin
+        foodRb.angularVelocity = new Vector3(Random.Range(-randAngularVelModifier, randAngularVelModifier),
+            Random.Range(-randAngularVelModifier, randAngularVelModifier), Random.Range(-randAngularVelModifier, randAngularVelModifier));
+
+        foodRb.AddForce(forceVector);
+
+        foodRb.GetComponent<FoodController>().StartDestroyTimer(foodDestroyTime);
+
+        _throwDelayCount = throwDelayMax;
+        _canThrow = false;
     }
 }
