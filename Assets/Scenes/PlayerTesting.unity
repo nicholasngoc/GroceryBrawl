@@ -1067,11 +1067,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 709381474219365232, guid: 75899483118525649ad68e86de503486,
-        type: 3}
-      propertyPath: foodDestroyTime
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 709381474638977809, guid: 75899483118525649ad68e86de503486,
         type: 3}
       propertyPath: m_Name
@@ -1080,12 +1075,12 @@ PrefabInstance:
     - target: {fileID: 709381474639333169, guid: 75899483118525649ad68e86de503486,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.54
       objectReference: {fileID: 0}
     - target: {fileID: 709381474639333169, guid: 75899483118525649ad68e86de503486,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.861
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 709381474639333169, guid: 75899483118525649ad68e86de503486,
         type: 3}
@@ -1132,7 +1127,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 709381474639333169, guid: 75899483118525649ad68e86de503486,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 709381474639333169, guid: 75899483118525649ad68e86de503486,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 709381474639333169, guid: 75899483118525649ad68e86de503486,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137409520718667323, guid: 75899483118525649ad68e86de503486,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3137409520718667323, guid: 75899483118525649ad68e86de503486, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 75899483118525649ad68e86de503486, type: 3}
 --- !u!1001 &4101473595633655480
 PrefabInstance:
