@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 709381474642212977}
   - component: {fileID: 709381474643985137}
   - component: {fileID: 709381474219365232}
+  - component: {fileID: 3227303121655506562}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -338,6 +339,19 @@ MonoBehaviour:
   throwForce: 1250
   randAngularVelModifier: 200
   throwDelayMax: 0.1
+--- !u!114 &3227303121655506562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709381474638977809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3500b856e288be746aeab11f67028877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bagParent: {fileID: 1550177890945871465}
 --- !u!1 &709381474638977811
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,6 +550,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_TrashBag_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1bfe102a0b9ad9941947906d1515d4da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bfe102a0b9ad9941947906d1515d4da, type: 3}
 --- !u!4 &4986422656455830924 stripped
@@ -610,6 +629,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Prop_TrashBag_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e5dc2b2a2618a3e4fbe84f5a0e5bccc2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5dc2b2a2618a3e4fbe84f5a0e5bccc2, type: 3}
@@ -686,6 +710,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_TrashBag_03
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e5dc2b2a2618a3e4fbe84f5a0e5bccc2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5dc2b2a2618a3e4fbe84f5a0e5bccc2, type: 3}
 --- !u!4 &8088734395313706860 stripped
@@ -760,6 +789,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Prop_TrashBag_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1cfc9583a1069454e8394877475e4a1d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cfc9583a1069454e8394877475e4a1d, type: 3}
@@ -836,6 +870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_TrashBag_02
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1bfe102a0b9ad9941947906d1515d4da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bfe102a0b9ad9941947906d1515d4da, type: 3}
 --- !u!4 &394785338560008741 stripped
@@ -911,6 +950,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_TrashBag_01
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1cfc9583a1069454e8394877475e4a1d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cfc9583a1069454e8394877475e4a1d, type: 3}
 --- !u!4 &613725270719826251 stripped
@@ -985,6 +1029,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Prop_TrashBag_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1cfc9583a1069454e8394877475e4a1d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cfc9583a1069454e8394877475e4a1d, type: 3}
@@ -1150,6 +1199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_Prop_TrashBag_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e5dc2b2a2618a3e4fbe84f5a0e5bccc2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5dc2b2a2618a3e4fbe84f5a0e5bccc2, type: 3}
