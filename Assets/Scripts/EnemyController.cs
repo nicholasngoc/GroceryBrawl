@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
             return GetComponent<ScoreModel>();
         }
     }
+    public EnemySpawner spawner;
 
     [Header("Stun Variables")]
     public bool isStunned = false;
@@ -55,6 +56,11 @@ public class EnemyController : MonoBehaviour
             if (destroyTime < 0)
                 Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        spawner.enemyCount--;
     }
 
     private void OnCollisionEnter(Collision collision)
