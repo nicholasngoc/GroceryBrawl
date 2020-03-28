@@ -43,6 +43,9 @@ public class ScoreModel : MonoBehaviour
         {
             _bags[x] = bagParent.GetChild(x).gameObject;
         }
+
+        //This forces the bags to adjust to the initial score
+        Score = _score;
     }
 
     private void Start()
