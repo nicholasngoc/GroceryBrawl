@@ -59,9 +59,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b083dadeb46e684e82cedd0a7a3d1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 0}
   isStunned: 0
   stunDurationMax: 3
   destroyTime: 5
+  ramSFX: {fileID: 3921195902319199877, guid: 2441e31a33dad984395e234af4ba4700, type: 3}
+  fruitHitSFX: {fileID: 5253486771871130802, guid: 8485d5ffca5c3744f8c18c9d1c3a560d,
+    type: 3}
 --- !u!54 &6857945415243291187
 Rigidbody:
   m_ObjectHideFlags: 0

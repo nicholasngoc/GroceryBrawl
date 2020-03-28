@@ -11,6 +11,8 @@ public class Throw : MonoBehaviour
     public GameObject throwSpawnPoint;
     public float foodDestroyTime;
 
+    public GameObject throwSFX;
+
     [Header("Throw Modifiers")]
     public float throwForce;
     public float randAngularVelModifier;
@@ -66,6 +68,9 @@ public class Throw : MonoBehaviour
 
         Rigidbody foodRb = Instantiate(_foodPrefabs[Random.Range(0, _foodPrefabs.Length)],
             throwSpawnPoint.transform.position, throwSpawnPoint.transform.rotation).GetComponent<Rigidbody>();
+
+        //Spawn sfx obj
+        Instantiate(throwSFX, transform);
 
         //This adds a random angular velocity to give the food a lil spin
         foodRb.angularVelocity = new Vector3(Random.Range(-randAngularVelModifier, randAngularVelModifier),
