@@ -593,6 +593,7 @@ MonoBehaviour:
   gameManager: {fileID: 1406297889}
   timerText: {fileID: 2136369259}
   scoreText: {fileID: 560262638}
+  gameOverText: {fileID: 0}
 --- !u!4 &1482298632
 Transform:
   m_ObjectHideFlags: 0

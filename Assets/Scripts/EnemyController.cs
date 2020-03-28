@@ -24,6 +24,7 @@ public class EnemyController : MonoBehaviour
     public bool isStunned = false;
     public float stunDurationMax;
     private float _stunDurationCount;
+    public ParticleSystem stunParticles;
 
     [Header("Destroy Variables")]
     private bool setDestroy;
@@ -36,6 +37,8 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        stunParticles.Stop();
     }
 
     private void Start()
@@ -66,6 +69,8 @@ public class EnemyController : MonoBehaviour
             if (_stunDurationCount < 0)
             {
                 isStunned = false;
+
+                stunParticles.Stop();
 
                 print("!isStunned");
             }
@@ -99,6 +104,7 @@ public class EnemyController : MonoBehaviour
                 _stunDurationCount = stunDurationMax;
                 isStunned = true;
 
+                stunParticles.Play();
                 print("isStunned");
             }
         }
