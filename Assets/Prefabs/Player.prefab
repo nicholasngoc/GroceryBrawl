@@ -336,6 +336,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwSpawnPoint: {fileID: 709381473279804041}
   foodDestroyTime: 3
+  throwSFX: {fileID: 2410490951105392274, guid: 8e93ca102cbfb5448b17e302f6646634,
+    type: 3}
   throwForce: 1250
   randAngularVelModifier: 200
   throwDelayMax: 0.1
