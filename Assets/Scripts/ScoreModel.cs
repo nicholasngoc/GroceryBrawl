@@ -32,7 +32,7 @@ public class ScoreModel : MonoBehaviour
             }
         }
     }
-    public Transform bagParent;
+    public Transform bagParent; //Parent obj that has the bag obj's as it's children
     private GameObject[] _bags;
 
     private void Awake()
