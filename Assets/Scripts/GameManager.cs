@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameState state;
     public float gameTime;
-    public int score;
+    public ScoreModel playerScore;
 
     private void Update()
     {
@@ -18,8 +18,6 @@ public class GameManager : MonoBehaviour
         {
             gameTime -= Time.deltaTime;
         }
-
-        //print(string.Format("GameState = {0}, Time = {1}", state, (int)gameTime));
     }
 }
 
