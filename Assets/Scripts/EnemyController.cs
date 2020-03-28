@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
         }
     }
     public EnemySpawner spawner;
+    public Animator animation;
+    public Rigidbody rb;
 
     [Header("Stun Variables")]
     public bool isStunned = false;
@@ -31,6 +33,11 @@ public class EnemyController : MonoBehaviour
     public GameObject ramSFX;
     public GameObject fruitHitSFX;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void Start()
     {
         //I gave the enemy a random score here. Feel free to change as desired
@@ -39,6 +46,18 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        /**
+         * Notes: So in the animation controllers or whatever the var "Speed_f" is what determines
+         * whether the animation is standing, walking, and running. For now I set it so that it corresponds
+         * to the rigidbody's velocity but we can always change this. From what I can tell:
+         * 
+         * 0 = standing
+         * 0.5 = walking
+         * 1 = running
+         */
+        if(animation != null)
+            animation.SetFloat("Speed_f", rb.velocity.magnitude);
+
         //Handles stun duration
         if (isStunned)
         {
