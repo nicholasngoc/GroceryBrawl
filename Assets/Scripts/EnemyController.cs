@@ -16,6 +16,9 @@ public class EnemyController : MonoBehaviour
             return GetComponent<ScoreModel>();
         }
     }
+    public EnemySpawner spawner;
+    public Animator animation;
+    public Rigidbody rb;
 
     [Header("Stun Variables")]
     public bool isStunned = false;
@@ -26,6 +29,15 @@ public class EnemyController : MonoBehaviour
     private bool setDestroy;
     public float destroyTime;
 
+    [Header("Audio")]
+    public GameObject ramSFX;
+    public GameObject fruitHitSFX;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void Start()
     {
         //I gave the enemy a random score here. Feel free to change as desired
@@ -34,6 +46,18 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
+        /**
+         * Notes: So in the animation controllers or whatever the var "Speed_f" is what determines
+         * whether the animation is standing, walking, and running. For now I set it so that it corresponds
+         * to the rigidbody's velocity but we can always change this. From what I can tell:
+         * 
+         * 0 = standing
+         * 0.5 = walking
+         * 1 = running
+         */
+        if(animation != null)
+            animation.SetFloat("Speed_f", rb.velocity.magnitude);
+
         //Handles stun duration
         if (isStunned)
         {
@@ -57,31 +81,49 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        spawner.enemyCount--;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        //This stuns the enemy if hit by a fruit
-        if(!isStunned && collision.gameObject.CompareTag("Fruit"))
+        if(collision.gameObject.CompareTag("Fruit"))
         {
-            _stunDurationCount = stunDurationMax;
-            isStunned = true;
+            //Spawn sfx obj
+            Instantiate(fruitHitSFX, transform);
 
-            print("isStunned");
+            //This stuns the enemy if hit by a fruit
+            if (!isStunned)
+            {
+                _stunDurationCount = stunDurationMax;
+                isStunned = true;
+
+                print("isStunned");
+            }
         }
-        //This gives the player the enemies score if the enemy is stunned
-        else if(isStunned && collision.gameObject.CompareTag("Player"))
-        {
-            collision.gameObject.GetComponent<ScoreModel>().Score += ScoreModel.Score;
-            ScoreModel.Score = 0;
 
-            setDestroy = true;
-        }
-        //This steals the players score if the enemy is not stunned and not set to be destroyed
-        else if(!isStunned && !setDestroy && collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player"))
         {
-            ScoreModel playerScore = collision.gameObject.GetComponent<ScoreModel>();
+            //Spawn sfx obj
+            Instantiate(ramSFX, transform);
 
-            ScoreModel.Score += playerScore.Score;
-            playerScore.Score = 0;
+            //This gives the player the enemies score if the enemy is stunned
+            if (isStunned)
+            {
+                collision.gameObject.GetComponent<ScoreModel>().Score += ScoreModel.Score;
+                ScoreModel.Score = 0;
+
+                setDestroy = true;
+            }
+            //This steals the players score if the enemy is not stunned and not set to be destroyed
+            else
+            {
+                ScoreModel playerScore = collision.gameObject.GetComponent<ScoreModel>();
+
+                ScoreModel.Score += playerScore.Score;
+                playerScore.Score = 0;
+            }
         }
     }
 }
