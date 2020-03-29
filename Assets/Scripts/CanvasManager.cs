@@ -9,6 +9,13 @@ public class CanvasManager : MonoBehaviour
 
     public Text timerText;
     public Text scoreText;
+    public Text gameOverText;
+
+    private void Awake()
+    {
+        if(gameOverText != null)
+            gameOverText.text = "";
+    }
 
     private void Update()
     {
