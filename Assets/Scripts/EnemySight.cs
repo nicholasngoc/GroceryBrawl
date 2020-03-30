@@ -24,52 +24,47 @@ public class EnemySight : MonoBehaviour
         player = GameObject.FindGameObjectsWithTag("Player");
         coll = GetComponent<SphereCollider>();
         selfState = GetComponent<EnemyAI>();
+        
     }
 
     void OnTriggerStay(Collider other)
     {
-        //bool hiding = player[0].GetComponent<playerStateTest>().isHiding;
         bool behindWall = false;
-        //delete if in searching
-        if (selfState.isChasing == 1)
-        {
-            selfState.lastPlayerSight = player[0].transform;
-        }
 
         //check if the player is in sight
         if (GameObject.ReferenceEquals(other.gameObject, player[0]))
         {
-            //--------------------------------------------------------------------------------------------------------------------------------------------
-            //playerInSight = -1;//default false
-            //--------------------------------------------------------------------------------------------------------------------------------------------
+            playerInSight = -1;//default false
+
             Vector3 directionPlayer = other.transform.position - transform.position; //make a vector pointing at the player
             float angle = Vector3.Angle(directionPlayer, transform.forward);//find angle between forward self and the player
 
-            if (angle < 0.5f * view)//if player is less than half of our view angle...
+            if (angle < 0.5f * view)//if player is less than half of our view angle... //0.5
             {
                 RaycastHit wallChecker;
-                if (Physics.Raycast(transform.position + transform.up, directionPlayer.normalized, out wallChecker, coll.radius))//if there is a collider
+                if (Physics.Raycast(transform.position + Vector3.Scale(transform.up, new Vector3(0.5f,0.5f,0.5f)), directionPlayer.normalized, out wallChecker, coll.radius))//if there is a collider
                 {
+                    print(wallChecker.collider.gameObject);
                     if (GameObject.ReferenceEquals(wallChecker.collider.gameObject, player[0]) && selfState.isChasing == 1)//if it's the player and we're chasing them
                     {
                         playerInSight = 1;//we can see the player
                     }
-                    else if (GameObject.ReferenceEquals(wallChecker.collider.gameObject, player[0]) && selfState.isShopping == 1)//if it's the player and we're hunting
+
+                    else if (GameObject.ReferenceEquals(wallChecker.collider.gameObject, player[0]) && selfState.isShopping == 1)//if it's the player and we're shopping
                     {
-                            playerInSight = 1;//we can see the player
+                        print(wallChecker);
+                        playerInSight = 1;//we can see the player
                     }
-                    else if (GameObject.ReferenceEquals(wallChecker.collider.gameObject, player[0]) && selfState.isRunningAway == 1)//if it's the player and we're searching
-                    {
-                            playerInSight = -1;//we've already hit the player so we'll keep running
-                    }
+                    //else if (GameObject.ReferenceEquals(wallChecker.collider.gameObject, player[0]) && selfState.isRunningAway == 1)//if it's the player and we're searching
+                    //{
+                    //    playerInSight = -1;//we've already hit the player so we'll keep running
+                    //}
                     else
                     {
                         behindWall = true;
                     }
-
                 }
             }
-
         }
         if (selfState.isChasing == 1 && behindWall)//if chasing, as long as player is in the range keep chasing unless they escape viewing range
         {
@@ -93,6 +88,5 @@ public class EnemySight : MonoBehaviour
                 playerInSight = -1;//can no longer see the player
             }
         }
-
     }
 }
