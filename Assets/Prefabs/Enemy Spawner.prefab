@@ -46,7 +46,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 6857945415243291199, guid: 99ac8d8025611e3459f6eba85dbf5330,
     type: 3}
   spawnLocationParent: {fileID: 0}
-  spawnRate: 3
-  maxEnemies: 5
+  spawnRate: 5
+  maxEnemies: 20
   enemyCount: 0
   isSpawning: 0

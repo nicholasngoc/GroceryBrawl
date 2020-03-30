@@ -123,7 +123,7 @@ public class EnemyController : MonoBehaviour
                 setDestroy = true;
             }
             //This steals the players score if the enemy is not stunned and not set to be destroyed
-            else
+            else if(!isStunned && !setDestroy)
             {
                 ScoreModel playerScore = collision.gameObject.GetComponent<ScoreModel>();
 

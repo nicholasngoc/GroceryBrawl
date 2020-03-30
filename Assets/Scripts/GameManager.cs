@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
 
             if(canvasManager.gameOverText != null)
                 canvasManager.gameOverText.text = "Game Over";
+
+            SceneManager.LoadScene("GameOver");
         }
         else if(gameTime > 0)
         {

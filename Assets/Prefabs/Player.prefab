@@ -340,7 +340,7 @@ MonoBehaviour:
     type: 3}
   throwForce: 1250
   randAngularVelModifier: 200
-  throwDelayMax: 0.1
+  throwDelayMax: 0.5
 --- !u!114 &3227303121655506562
 MonoBehaviour:
   m_ObjectHideFlags: 0
