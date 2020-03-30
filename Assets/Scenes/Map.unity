@@ -35749,6 +35749,11 @@ PrefabInstance:
       propertyPath: playerScore
       value: 
       objectReference: {fileID: 1889254434}
+    - target: {fileID: 1548573693854244750, guid: c7695a3cf18912448935167cd70717c6,
+        type: 3}
+      propertyPath: gameTime
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6291935097906755190, guid: c7695a3cf18912448935167cd70717c6,
         type: 3}
       propertyPath: m_Name

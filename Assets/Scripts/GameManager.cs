@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
             if(canvasManager.gameOverText != null)
                 canvasManager.gameOverText.text = "Game Over";
 
+            RememberScore.score = playerScore.Score;
             SceneManager.LoadScene("GameOver");
         }
         else if(gameTime > 0)
