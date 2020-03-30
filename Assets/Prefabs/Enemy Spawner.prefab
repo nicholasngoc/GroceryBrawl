@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8067042923594011476}
   - component: {fileID: 8067042923594011483}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Enemy Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 6857945415243291199, guid: 99ac8d8025611e3459f6eba85dbf5330,
     type: 3}
   spawnLocationParent: {fileID: 0}
-  spawnRate: 3
-  maxEnemies: 5
+  spawnRate: 5
+  maxEnemies: 20
   enemyCount: 0
   isSpawning: 0

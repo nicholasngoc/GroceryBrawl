@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class DetectEnemy : MonoBehaviour
 {
-    public float view = 90f;//ai view in degrees
+    public float view = 30f;//ai view in degrees
     public int enemyInSight = -1;//state var
 
     //might use the following for hearing

@@ -43,3 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c361e5cb72a3904ebfab97b56ecc993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasManager: {fileID: 0}
+  state: 0
+  gameTime: 300
+  playerScore: {fileID: 0}
